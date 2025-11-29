@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Voz - Comunicador</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#FF9800">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="phrase-container">
+            <div id="display-phrase" placeholder="Toca los botones..."></div>
+            <button id="btn-speak-now" class="action-btn" aria-label="Hablar ahora">🔊</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="favorites-container"></div>
+        <div id="options-container">
+            <p class="loading-msg">Cargando pictogramas...</p>
+        </div>
+        <div style="height: 20px;"></div>
+    </main>
+
+    <footer>
+        <div id="quick-actions-container"></div>
+    </footer>
+
+    <script src="js/automata.js"></script>
+    <script src="js/tts.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
