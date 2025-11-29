@@ -292,8 +292,8 @@
         { "label": "Tiene", "icon": "https://api.arasaac.org/api/pictograms/36940", "nextState": "sensaciones_3ra", "category": "verb" },
         { "label": "Más Comida", "icon": "https://api.arasaac.org/api/pictograms/5678", "nextState": "alimentos_3ra", "category": "food", "silent": true },
         { "label": "Más Juguetes", "icon": "https://api.arasaac.org/api/pictograms/2367", "nextState": "juguetes_3ra", "category": "toy", "silent": true },
-        { "label": "Ve TV", "icon": "https://api.arasaac.org/api/pictograms/31792", "nextState": "conector_final_3ra", "category": "action" },
-        { "label": "Va al Baño", "icon": "https://api.arasaac.org/api/pictograms/27553", "nextState": "conector_final_3ra", "category": "place" }
+        { "label": "Ver TV", "icon": "https://api.arasaac.org/api/pictograms/31792", "nextState": "conector_final_3ra", "category": "action" },
+        { "label": "Ir al Baño", "icon": "https://api.arasaac.org/api/pictograms/27553", "nextState": "conector_final_3ra", "category": "place" }
       ]
     },
     "opciones_pero_3ra": {
