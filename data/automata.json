@@ -284,12 +284,12 @@
       "description": "¿QUÉ MÁS (3ra)?",
       "isFinal": false,
       "options": [
-        { "label": "Come", "icon": "https://api.arasaac.org/api/pictograms/22536", "nextState": "alimentos_3ra", "category": "action" },
-        { "label": "Bebe", "icon": "https://api.arasaac.org/api/pictograms/22533", "nextState": "bebidas_3ra", "category": "action" },
-        { "label": "Juega", "icon": "https://api.arasaac.org/api/pictograms/28688", "nextState": "juguetes_3ra", "category": "action" },
-        { "label": "Duerme", "icon": "https://api.arasaac.org/api/pictograms/28694", "nextState": "conector_final_3ra", "category": "action" },
-        { "label": "Está...", "icon": "https://api.arasaac.org/api/pictograms/22485", "nextState": "estados_emocion_3ra", "category": "verb" },
-        { "label": "Tiene...", "icon": "https://api.arasaac.org/api/pictograms/36940", "nextState": "sensaciones_3ra", "category": "verb" },
+        { "label": "Comer", "icon": "https://api.arasaac.org/api/pictograms/22536", "nextState": "alimentos_3ra", "category": "action" },
+        { "label": "Beber", "icon": "https://api.arasaac.org/api/pictograms/22533", "nextState": "bebidas_3ra", "category": "action" },
+        { "label": "Jugar", "icon": "https://api.arasaac.org/api/pictograms/28688", "nextState": "juguetes_3ra", "category": "action" },
+        { "label": "Dormir", "icon": "https://api.arasaac.org/api/pictograms/28694", "nextState": "conector_final_3ra", "category": "action" },
+        { "label": "Está", "icon": "https://api.arasaac.org/api/pictograms/22485", "nextState": "estados_emocion_3ra", "category": "verb" },
+        { "label": "Tiene", "icon": "https://api.arasaac.org/api/pictograms/36940", "nextState": "sensaciones_3ra", "category": "verb" },
         { "label": "Más Comida", "icon": "https://api.arasaac.org/api/pictograms/5678", "nextState": "alimentos_3ra", "category": "food", "silent": true },
         { "label": "Más Juguetes", "icon": "https://api.arasaac.org/api/pictograms/2367", "nextState": "juguetes_3ra", "category": "toy", "silent": true },
         { "label": "Ve TV", "icon": "https://api.arasaac.org/api/pictograms/31792", "nextState": "conector_final_3ra", "category": "action" },
@@ -312,11 +312,11 @@
       "description": "ACCIONES (3ra)",
       "isFinal": true,
       "options": [
-        { "label": "Duerme", "icon": "https://api.arasaac.org/api/pictograms/28694", "nextState": "conector_final_3ra", "category": "action" },
-        { "label": "Juega", "icon": "https://api.arasaac.org/api/pictograms/28688", "nextState": "juguetes_3ra", "category": "action" },
-        { "label": "Come", "icon": "https://api.arasaac.org/api/pictograms/22536", "nextState": "alimentos_3ra", "category": "action" },
-        { "label": "Va al Baño", "icon": "https://api.arasaac.org/api/pictograms/27553", "nextState": "conector_final_3ra", "category": "place" },
-        { "label": "Sale", "icon": "https://api.arasaac.org/api/pictograms/28678", "nextState": "conector_final_3ra", "category": "action" }
+        { "label": "Dormir", "icon": "https://api.arasaac.org/api/pictograms/28694", "nextState": "conector_final_3ra", "category": "action" },
+        { "label": "Jugar", "icon": "https://api.arasaac.org/api/pictograms/28688", "nextState": "juguetes_3ra", "category": "action" },
+        { "label": "Comer", "icon": "https://api.arasaac.org/api/pictograms/22536", "nextState": "alimentos_3ra", "category": "action" },
+        { "label": "Ir al Baño", "icon": "https://api.arasaac.org/api/pictograms/27553", "nextState": "conector_final_3ra", "category": "place" },
+        { "label": "Salir", "icon": "https://api.arasaac.org/api/pictograms/28678", "nextState": "conector_final_3ra", "category": "action" }
       ]
     },
     "opciones_solo_cosas_3ra": {
