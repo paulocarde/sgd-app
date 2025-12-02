@@ -1,6 +1,7 @@
 {
   "initialState": "inicio_sujetos",
   "states": {
+    
     "inicio_sujetos": {
       "description": "¿QUIÉN?",
       "isFinal": false,
@@ -10,9 +11,10 @@
         { "label": "Mamá", "icon": "https://api.arasaac.org/api/pictograms/9854", "nextState": "verbos_3ra_persona", "category": "person" },
         { "label": "Papá", "icon": "https://api.arasaac.org/api/pictograms/9855", "nextState": "verbos_3ra_persona", "category": "person" },
         { "label": "Nosotros", "icon": "https://api.arasaac.org/api/pictograms/35378", "nextState": "verbos_plural", "category": "pronoun" },
-        { "label": "Abuelos", "icon": "https://api.arasaac.org/api/pictograms/35384", "nextState": "verbos_plural", "category": "person" }
+        { "label": "Abuelos", "icon": "https://api.arasaac.org/api/pictograms/35384", "nextState": "verbos_plural_3ra", "category": "person" }
       ]
     },
+
     "verbos_1ra_persona": {
       "description": "YO...",
       "isFinal": false,
@@ -22,10 +24,10 @@
         { "label": "Tengo", "icon": "https://api.arasaac.org/api/pictograms/36940", "nextState": "sensaciones", "category": "verb" },
         { "label": "Voy a", "icon": "https://api.arasaac.org/api/pictograms/6920", "nextState": "lugares", "category": "verb" },
         { "label": "Me gusta", "icon": "https://api.arasaac.org/api/pictograms/22501", "nextState": "intencion_gustos", "category": "verb" },
-        { "label": "Veo", "icon": "https://api.arasaac.org/api/pictograms/22513", "nextState": "opciones_solo_cosas", "category": "verb" },
         { "label": "Necesito", "icon": "https://api.arasaac.org/api/pictograms/22469", "nextState": "intencion_accion", "category": "verb" }
       ]
     },
+
     "verbos_2da_persona": { 
       "description": "TÚ...", 
       "isFinal": false,
@@ -34,12 +36,12 @@
         { "label": "Estás", "icon": "https://api.arasaac.org/api/pictograms/22485", "nextState": "estados_emocion", "category": "verb" },
         { "label": "Tienes", "icon": "https://api.arasaac.org/api/pictograms/36940", "nextState": "sensaciones", "category": "verb" },
         { "label": "Vas a", "icon": "https://api.arasaac.org/api/pictograms/6920", "nextState": "lugares", "category": "verb" },
-        { "label": "Necesitas", "icon": "https://api.arasaac.org/api/pictograms/22469", "nextState": "intencion_accion", "category": "verb" },
-        { "label": "Ves", "icon": "https://api.arasaac.org/api/pictograms/22513", "nextState": "opciones_solo_cosas", "category": "verb" }
+        { "label": "Necesitas", "icon": "https://api.arasaac.org/api/pictograms/22469", "nextState": "intencion_accion", "category": "verb" }
       ] 
     },
+
     "verbos_3ra_persona": {
-      "description": "ÉL / ELLA / PAPÁ / MAMÁ...",
+      "description": "ÉL / ELLA...",
       "isFinal": false,
       "options": [
         { "label": "Quiere", "icon": "https://api.arasaac.org/api/pictograms/22467", "nextState": "intencion_accion_3ra", "category": "verb" },
@@ -49,6 +51,7 @@
         { "label": "Necesita", "icon": "https://api.arasaac.org/api/pictograms/22469", "nextState": "intencion_accion_3ra", "category": "verb" }
       ]
     },
+    
     "verbos_plural": { 
       "description": "NOSOTROS...", 
       "isFinal": false,
@@ -59,6 +62,18 @@
         { "label": "Vamos a", "icon": "https://api.arasaac.org/api/pictograms/6920", "nextState": "lugares_plural", "category": "verb" }
       ] 
     },
+
+    "verbos_plural_3ra": { 
+      "description": "ELLOS (ABUELOS)...", 
+      "isFinal": false,
+      "options": [ 
+        { "label": "Quieren", "icon": "https://api.arasaac.org/api/pictograms/22467", "nextState": "intencion_accion_plural", "category": "verb" },
+        { "label": "Están", "icon": "https://api.arasaac.org/api/pictograms/22485", "nextState": "estados_emocion_plural", "category": "verb" },
+        { "label": "Tienen", "icon": "https://api.arasaac.org/api/pictograms/36940", "nextState": "sensaciones_plural", "category": "verb" },
+        { "label": "Van a", "icon": "https://api.arasaac.org/api/pictograms/6920", "nextState": "lugares_plural", "category": "verb" }
+      ] 
+    },
+
     "intencion_accion": {
       "description": "¿QUÉ HACER?",
       "isFinal": false,
@@ -70,6 +85,7 @@
         { "label": "Dibujar", "icon": "https://api.arasaac.org/api/pictograms/28704", "nextState": "conector_final", "category": "action" }
       ]
     },
+
     "intencion_gustos": {
       "description": "¿QUÉ TE GUSTA?",
       "options": [
@@ -77,6 +93,7 @@
         { "label": "Jugar", "nextState": "juguetes", "icon": "https://api.arasaac.org/api/pictograms/28688", "category": "action" }
       ]
     },
+
     "alimentos": {
       "description": "COMIDAS",
       "isFinal": true,
@@ -84,23 +101,22 @@
         { "label": "Sopa", "icon": "https://api.arasaac.org/api/pictograms/3323", "nextState": "conector_comida", "category": "food" },
         { "label": "Galletas", "icon": "https://api.arasaac.org/api/pictograms/6100", "nextState": "conector_comida", "category": "food" },
         { "label": "Pan", "icon": "https://api.arasaac.org/api/pictograms/2418", "nextState": "conector_comida", "category": "food" },
-        { "label": "Cereales", "icon": "https://api.arasaac.org/api/pictograms/5558", "nextState": "conector_comida", "category": "food" },
         { "label": "Fruta", "icon": "https://api.arasaac.org/api/pictograms/5678", "nextState": "conector_comida", "category": "food" },
         { "label": "Pollo", "icon": "https://api.arasaac.org/api/pictograms/3224", "nextState": "conector_comida", "category": "food" },
-        { "label": "Huevo", "icon": "https://api.arasaac.org/api/pictograms/2403", "nextState": "conector_comida", "category": "food" },
         { "label": "Arroz", "icon": "https://api.arasaac.org/api/pictograms/3313", "nextState": "conector_comida", "category": "food" }
       ]
     },
+
     "bebidas": {
       "description": "BEBIDAS",
       "isFinal": true,
       "options": [
         { "label": "Agua", "icon": "https://api.arasaac.org/api/pictograms/24103", "nextState": "conector_comida", "category": "drink" },
         { "label": "Leche", "icon": "https://api.arasaac.org/api/pictograms/5586", "nextState": "conector_comida", "category": "drink" },
-        { "label": "Jugo", "icon": "https://api.arasaac.org/api/pictograms/5482", "nextState": "conector_comida", "category": "drink" },
-        { "label": "Batido", "icon": "https://api.arasaac.org/api/pictograms/3364", "nextState": "conector_comida", "category": "drink" }
+        { "label": "Jugo", "icon": "https://api.arasaac.org/api/pictograms/5482", "nextState": "conector_comida", "category": "drink" }
       ]
     },
+
     "estados_emocion": {
       "description": "EMOCIONES",
       "isFinal": true,
@@ -113,6 +129,7 @@
         { "label": "Enfermo", "icon": "https://api.arasaac.org/api/pictograms/25736", "nextState": "conector_final", "category": "emotion" }
       ]
     },
+
     "conector_final": {
       "description": "¿CÓMO SEGUIR?",
       "isFinal": true,
@@ -122,6 +139,7 @@
         { "label": "Pero", "icon": "https://api.arasaac.org/api/pictograms/28169", "nextState": "opciones_pero", "category": "connector" }
       ]
     },
+
     "conector_comida": {
       "description": "¿CÓMO SEGUIR (COMIDA)?",
       "isFinal": true,
@@ -131,6 +149,7 @@
         { "label": "Pero", "icon": "https://api.arasaac.org/api/pictograms/28169", "nextState": "opciones_pero", "category": "connector" }
       ]
     },
+
     "opciones_mixtas": {
       "description": "¿QUÉ MÁS?",
       "isFinal": false,
@@ -141,77 +160,70 @@
         { "label": "Galletas", "icon": "https://api.arasaac.org/api/pictograms/6100", "nextState": "conector_final", "category": "food" },
         { "label": "Agua", "icon": "https://api.arasaac.org/api/pictograms/24103", "nextState": "conector_final", "category": "drink" },
         { "label": "Pelota", "icon": "https://api.arasaac.org/api/pictograms/2367", "nextState": "conector_final", "category": "toy" },
-        { "label": "Tablet", "icon": "https://api.arasaac.org/api/pictograms/25732", "nextState": "conector_final", "category": "toy" },
-        { "label": "Ver TV", "icon": "https://api.arasaac.org/api/pictograms/31792", "nextState": "conector_final", "category": "action" }
+        { "label": "TV", "icon": "https://api.arasaac.org/api/pictograms/31792", "nextState": "conector_final", "category": "action" }
       ]
     },
+
     "opciones_solo_cosas": {
       "description": "COSAS",
       "isFinal": true,
       "options": [
         { "label": "Galletas", "icon": "https://api.arasaac.org/api/pictograms/6100", "nextState": "conector_comida", "category": "food" },
         { "label": "Agua", "icon": "https://api.arasaac.org/api/pictograms/24103", "nextState": "conector_comida", "category": "drink" },
-        { "label": "Jugo", "icon": "https://api.arasaac.org/api/pictograms/5482", "nextState": "conector_comida", "category": "drink" },
         { "label": "Pelota", "icon": "https://api.arasaac.org/api/pictograms/2367", "nextState": "conector_final", "category": "toy" },
-        { "label": "Tablet", "icon": "https://api.arasaac.org/api/pictograms/25732", "nextState": "conector_final", "category": "toy" },
-        { "label": "Muñeca", "icon": "https://api.arasaac.org/api/pictograms/10668", "nextState": "conector_final", "category": "toy" },
-        { "label": "TV", "icon": "https://api.arasaac.org/api/pictograms/31792", "nextState": "conector_final", "category": "object" },
-        { "label": "Internet", "icon": "https://api.arasaac.org/api/pictograms/29627", "nextState": "conector_final", "category": "object" }
+        { "label": "TV", "icon": "https://api.arasaac.org/api/pictograms/31792", "nextState": "conector_final", "category": "object" }
       ]
     },
+
     "opciones_solo_acciones": {
       "description": "ACCIONES",
       "isFinal": true,
       "options": [
         { "label": "Dormir", "icon": "https://api.arasaac.org/api/pictograms/28694", "nextState": "conector_final", "category": "action" },
         { "label": "Jugar", "icon": "https://api.arasaac.org/api/pictograms/28688", "nextState": "juguetes", "category": "action" },
-        { "label": "Comer", "icon": "https://api.arasaac.org/api/pictograms/22536", "nextState": "alimentos", "category": "action" },
-        { "label": "Ir al Baño", "icon": "https://api.arasaac.org/api/pictograms/27553", "nextState": "conector_final", "category": "place" },
-        { "label": "Salir", "icon": "https://api.arasaac.org/api/pictograms/28678", "nextState": "conector_final", "category": "action" }
+        { "label": "Ir al Baño", "icon": "https://api.arasaac.org/api/pictograms/27553", "nextState": "conector_final", "category": "place" }
       ]
     },
+
     "opciones_compania": {
-      "description": "¿CON QUIÉN (CON)?",
+      "description": "¿CON QUIÉN?",
       "isFinal": true,
       "options": [
         { "label": "Mamá", "icon": "https://api.arasaac.org/api/pictograms/9854", "nextState": "conector_final", "category": "person" },
         { "label": "Papá", "icon": "https://api.arasaac.org/api/pictograms/9855", "nextState": "conector_final", "category": "person" },
         { "label": "Peluche", "icon": "https://api.arasaac.org/api/pictograms/2371", "nextState": "conector_final", "category": "toy" },
-        { "label": "Amigos", "icon": "https://api.arasaac.org/api/pictograms/35378", "nextState": "conector_final", "category": "person" },
-        { "label": "El Perro", "icon": "https://api.arasaac.org/api/pictograms/2332", "nextState": "conector_final", "category": "animal" },
-        { "label": "El Gato", "icon": "https://api.arasaac.org/api/pictograms/2333", "nextState": "conector_final", "category": "animal" }
+        { "label": "El Perro", "icon": "https://api.arasaac.org/api/pictograms/2332", "nextState": "conector_final", "category": "animal" }
       ]
     },
+
     "opciones_con_ingredientes": {
       "description": "ACOMPAÑAMIENTO",
       "isFinal": true,
       "options": [
         { "label": "Pollo", "icon": "https://api.arasaac.org/api/pictograms/3224", "nextState": "conector_comida", "category": "food" },
-        { "label": "Arroz", "icon": "https://api.arasaac.org/api/pictograms/3313", "nextState": "conector_comida", "category": "food" },
         { "label": "Papas", "icon": "https://api.arasaac.org/api/pictograms/2345", "nextState": "conector_comida", "category": "food" },
         { "label": "Pan", "icon": "https://api.arasaac.org/api/pictograms/2418", "nextState": "conector_comida", "category": "food" },
-        { "label": "Leche", "icon": "https://api.arasaac.org/api/pictograms/5586", "nextState": "conector_comida", "category": "food" },
-        { "label": "Mamá", "icon": "https://api.arasaac.org/api/pictograms/9854", "nextState": "conector_final", "category": "person" },
-        { "label": "Papá", "icon": "https://api.arasaac.org/api/pictograms/9855", "nextState": "conector_final", "category": "person" }
+        { "label": "Mamá", "icon": "https://api.arasaac.org/api/pictograms/9854", "nextState": "conector_final", "category": "person" }
       ]
     },
+
     "opciones_pero": {
-      "description": "¿QUÉ PASA (PERO)?",
+      "description": "¿QUÉ PASA?",
       "isFinal": true,
       "options": [
         { "label": "No quiero", "icon": "https://api.arasaac.org/api/pictograms/6157", "nextState": "opciones_mixtas", "category": "negation" },
         { "label": "No hay", "icon": "https://api.arasaac.org/api/pictograms/6155", "nextState": "opciones_solo_cosas", "category": "negation" },
         { "label": "No puedo", "icon": "https://api.arasaac.org/api/pictograms/6162", "nextState": "opciones_solo_acciones", "category": "negation" },
         { "label": "Estoy cansado", "icon": "https://api.arasaac.org/api/pictograms/5529", "nextState": "fin_total", "category": "emotion" },
-        { "label": "Ahora no", "icon": "https://api.arasaac.org/api/pictograms/12217", "nextState": "fin_total", "category": "adverb" },
-        { "label": "Después", "icon": "https://api.arasaac.org/api/pictograms/12220", "nextState": "fin_total", "category": "adverb" }
+        { "label": "Ahora no", "icon": "https://api.arasaac.org/api/pictograms/12217", "nextState": "fin_total", "category": "adverb" }
       ]
     },
-    "sensaciones": { "description": "TENGO...", "options": [ { "label": "Hambre", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/6361" }, { "label": "Sed", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/6363" }, { "label": "Frío", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/10360" }, { "label": "Calor", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/10358" }, { "label": "Dolor", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/6365" } ] },
-    "lugares": { "description": "VOY A...", "options": [ { "label": "Parque", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/36423" }, { "label": "Baño", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/27553" }, { "label": "Casa", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/8584" }, { "label": "Escuela", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/10574" } ] },
-    "objetos_varios": { "description": "COSAS", "options": [ { "label": "Televisión", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/31792" }, { "label": "Música", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/27985" } ] },
-    "juguetes": { "description": "JUGUETES", "options": [ { "label": "Pelota", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/2367" }, { "label": "Carro", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/5847" }, { "label": "Muñeca", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/10668" }, { "label": "Tablet", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/25732" } ] },
-    "actividades": { "description": "ACTIVIDADES", "options": [ { "label": "Pis", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/5450" }, { "label": "Caca", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/5451" }, { "label": "Lavarme manos", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/32415" } ] },
+    
+    "sensaciones": { "description": "TENGO...", "options": [ { "label": "Hambre", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/6361" }, { "label": "Sed", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/6363" }, { "label": "Frío", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/10360" }, { "label": "Dolor", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/6365" } ] },
+    "lugares": { "description": "VOY A...", "options": [ { "label": "Parque", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/36423" }, { "label": "Baño", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/27553" }, { "label": "Casa", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/8584" } ] },
+    "objetos_varios": { "description": "COSAS", "options": [ { "label": "Televisión", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/31792" } ] },
+    "juguetes": { "description": "JUGUETES", "options": [ { "label": "Pelota", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/2367" }, { "label": "Muñeca", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/10668" }, { "label": "Tablet", "nextState": "conector_final", "icon": "https://api.arasaac.org/api/pictograms/25732" } ] },
+
     "intencion_accion_3ra": {
       "description": "¿QUÉ HACER? (3ra)",
       "isFinal": false,
@@ -219,24 +231,18 @@
         { "label": "Comer", "icon": "https://api.arasaac.org/api/pictograms/22536", "nextState": "alimentos_3ra", "category": "action" },
         { "label": "Beber", "icon": "https://api.arasaac.org/api/pictograms/22533", "nextState": "bebidas_3ra", "category": "action" },
         { "label": "Jugar", "icon": "https://api.arasaac.org/api/pictograms/28688", "nextState": "juguetes_3ra", "category": "action" },
-        { "label": "Dormir", "icon": "https://api.arasaac.org/api/pictograms/28694", "nextState": "conector_final_3ra", "category": "action" },
-        { "label": "Dibujar", "icon": "https://api.arasaac.org/api/pictograms/28704", "nextState": "conector_final_3ra", "category": "action" }
+        { "label": "Dormir", "icon": "https://api.arasaac.org/api/pictograms/28694", "nextState": "conector_final_3ra", "category": "action" }
       ]
     },
-    "sensaciones_3ra": { "description": "TIENE... (3ra)", "options": [ { "label": "Hambre", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/6361" }, { "label": "Sed", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/6363" }, { "label": "Frío", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/10360" }, { "label": "Calor", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/10358" }, { "label": "Dolor", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/6365" } ] },
-    "lugares_3ra": { "description": "VA A... (3ra)", "options": [ { "label": "Parque", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/36423" }, { "label": "Baño", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/27553" }, { "label": "Casa", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/8584" }, { "label": "Escuela", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/10574" } ] },
+    "sensaciones_3ra": { "description": "TIENE... (3ra)", "options": [ { "label": "Hambre", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/6361" }, { "label": "Sed", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/6363" }, { "label": "Frío", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/10360" } ] },
+    "lugares_3ra": { "description": "VA A... (3ra)", "options": [ { "label": "Parque", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/36423" }, { "label": "Baño", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/27553" } ] },
     "alimentos_3ra": {
       "description": "COMIDAS (3ra)",
       "isFinal": true,
       "options": [
         { "label": "Sopa", "icon": "https://api.arasaac.org/api/pictograms/3323", "nextState": "conector_comida_3ra", "category": "food" },
         { "label": "Galletas", "icon": "https://api.arasaac.org/api/pictograms/6100", "nextState": "conector_comida_3ra", "category": "food" },
-        { "label": "Pan", "icon": "https://api.arasaac.org/api/pictograms/2418", "nextState": "conector_comida_3ra", "category": "food" },
-        { "label": "Cereales", "icon": "https://api.arasaac.org/api/pictograms/5558", "nextState": "conector_comida_3ra", "category": "food" },
-        { "label": "Fruta", "icon": "https://api.arasaac.org/api/pictograms/5678", "nextState": "conector_comida_3ra", "category": "food" },
-        { "label": "Pollo", "icon": "https://api.arasaac.org/api/pictograms/3224", "nextState": "conector_comida_3ra", "category": "food" },
-        { "label": "Huevo", "icon": "https://api.arasaac.org/api/pictograms/2403", "nextState": "conector_comida_3ra", "category": "food" },
-        { "label": "Arroz", "icon": "https://api.arasaac.org/api/pictograms/3313", "nextState": "conector_comida_3ra", "category": "food" }
+        { "label": "Pan", "icon": "https://api.arasaac.org/api/pictograms/2418", "nextState": "conector_comida_3ra", "category": "food" }
       ]
     },
     "bebidas_3ra": {
@@ -245,8 +251,7 @@
       "options": [
         { "label": "Agua", "icon": "https://api.arasaac.org/api/pictograms/24103", "nextState": "conector_comida_3ra", "category": "drink" },
         { "label": "Leche", "icon": "https://api.arasaac.org/api/pictograms/5586", "nextState": "conector_comida_3ra", "category": "drink" },
-        { "label": "Jugo", "icon": "https://api.arasaac.org/api/pictograms/5482", "nextState": "conector_comida_3ra", "category": "drink" },
-        { "label": "Batido", "icon": "https://api.arasaac.org/api/pictograms/3364", "nextState": "conector_comida_3ra", "category": "drink" }
+        { "label": "Jugo", "icon": "https://api.arasaac.org/api/pictograms/5482", "nextState": "conector_comida_3ra", "category": "drink" }
       ]
     },
     "estados_emocion_3ra": {
@@ -256,9 +261,7 @@
         { "label": "Feliz", "icon": "https://api.arasaac.org/api/pictograms/6499", "nextState": "conector_final_3ra", "category": "emotion" },
         { "label": "Triste", "icon": "https://api.arasaac.org/api/pictograms/13030", "nextState": "conector_final_3ra", "category": "emotion" },
         { "label": "Enojado", "icon": "https://api.arasaac.org/api/pictograms/5688", "nextState": "conector_final_3ra", "category": "emotion" },
-        { "label": "Cansado", "icon": "https://api.arasaac.org/api/pictograms/5529", "nextState": "conector_final_3ra", "category": "emotion" },
-        { "label": "Asustado", "icon": "https://api.arasaac.org/api/pictograms/5690", "nextState": "conector_final_3ra", "category": "emotion" },
-        { "label": "Enfermo", "icon": "https://api.arasaac.org/api/pictograms/25736", "nextState": "conector_final_3ra", "category": "emotion" }
+        { "label": "Cansado", "icon": "https://api.arasaac.org/api/pictograms/5529", "nextState": "conector_final_3ra", "category": "emotion" }
       ]
     },
     "conector_final_3ra": {
@@ -279,21 +282,18 @@
         { "label": "Pero", "icon": "https://api.arasaac.org/api/pictograms/28169", "nextState": "opciones_pero_3ra", "category": "connector" }
       ]
     },
-    "juguetes_3ra": { "description": "JUGUETES (3ra)", "options": [ { "label": "Pelota", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/2367" }, { "label": "Carro", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/5847" }, { "label": "Muñeca", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/10668" }, { "label": "Tablet", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/25732" } ] },
+    "juguetes_3ra": { "description": "JUGUETES (3ra)", "options": [ { "label": "Pelota", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/2367" }, { "label": "Muñeca", "nextState": "conector_final_3ra", "icon": "https://api.arasaac.org/api/pictograms/10668" } ] },
+    
     "opciones_acciones_mixtas_3ra": {
       "description": "¿QUÉ MÁS (3ra)?",
       "isFinal": false,
       "options": [
-        { "label": "Comer", "icon": "https://api.arasaac.org/api/pictograms/22536", "nextState": "alimentos_3ra", "category": "action" },
-        { "label": "Beber", "icon": "https://api.arasaac.org/api/pictograms/22533", "nextState": "bebidas_3ra", "category": "action" },
-        { "label": "Jugar", "icon": "https://api.arasaac.org/api/pictograms/28688", "nextState": "juguetes_3ra", "category": "action" },
-        { "label": "Dormir", "icon": "https://api.arasaac.org/api/pictograms/28694", "nextState": "conector_final_3ra", "category": "action" },
-        { "label": "Está", "icon": "https://api.arasaac.org/api/pictograms/22485", "nextState": "estados_emocion_3ra", "category": "verb" },
-        { "label": "Tiene", "icon": "https://api.arasaac.org/api/pictograms/36940", "nextState": "sensaciones_3ra", "category": "verb" },
-        { "label": "Más Comida", "icon": "https://api.arasaac.org/api/pictograms/5678", "nextState": "alimentos_3ra", "category": "food", "silent": true },
-        { "label": "Más Juguetes", "icon": "https://api.arasaac.org/api/pictograms/2367", "nextState": "juguetes_3ra", "category": "toy", "silent": true },
-        { "label": "Ver TV", "icon": "https://api.arasaac.org/api/pictograms/31792", "nextState": "conector_final_3ra", "category": "action" },
-        { "label": "Ir al Baño", "icon": "https://api.arasaac.org/api/pictograms/27553", "nextState": "conector_final_3ra", "category": "place" }
+        { "label": "Come", "icon": "https://api.arasaac.org/api/pictograms/22536", "nextState": "alimentos_3ra", "category": "action" },
+        { "label": "Bebe", "icon": "https://api.arasaac.org/api/pictograms/22533", "nextState": "bebidas_3ra", "category": "action" },
+        { "label": "Juega", "icon": "https://api.arasaac.org/api/pictograms/28688", "nextState": "juguetes_3ra", "category": "action" },
+        { "label": "Duerme", "icon": "https://api.arasaac.org/api/pictograms/28694", "nextState": "conector_final_3ra", "category": "action" },
+        { "label": "Está...", "icon": "https://api.arasaac.org/api/pictograms/22485", "nextState": "estados_emocion_3ra", "category": "verb" },
+        { "label": "Tiene...", "icon": "https://api.arasaac.org/api/pictograms/36940", "nextState": "sensaciones_3ra", "category": "verb" }
       ]
     },
     "opciones_pero_3ra": {
@@ -303,20 +303,16 @@
         { "label": "No quiere", "icon": "https://api.arasaac.org/api/pictograms/6157", "nextState": "opciones_acciones_mixtas_3ra", "category": "negation" },
         { "label": "No puede", "icon": "https://api.arasaac.org/api/pictograms/6162", "nextState": "opciones_solo_acciones_3ra", "category": "negation" },
         { "label": "Está cansado", "icon": "https://api.arasaac.org/api/pictograms/5529", "nextState": "fin_total", "category": "emotion" },
-        { "label": "No hay", "icon": "https://api.arasaac.org/api/pictograms/6155", "nextState": "opciones_solo_cosas_3ra", "category": "negation" },
-        { "label": "Ahora no", "icon": "https://api.arasaac.org/api/pictograms/12217", "nextState": "fin_total", "category": "adverb" },
-        { "label": "Después", "icon": "https://api.arasaac.org/api/pictograms/12220", "nextState": "fin_total", "category": "adverb" }
+        { "label": "No hay", "icon": "https://api.arasaac.org/api/pictograms/6155", "nextState": "opciones_solo_cosas_3ra", "category": "negation" }
       ]
     },
     "opciones_solo_acciones_3ra": {
       "description": "ACCIONES (3ra)",
       "isFinal": true,
       "options": [
-        { "label": "Dormir", "icon": "https://api.arasaac.org/api/pictograms/28694", "nextState": "conector_final_3ra", "category": "action" },
-        { "label": "Jugar", "icon": "https://api.arasaac.org/api/pictograms/28688", "nextState": "juguetes_3ra", "category": "action" },
-        { "label": "Comer", "icon": "https://api.arasaac.org/api/pictograms/22536", "nextState": "alimentos_3ra", "category": "action" },
-        { "label": "Ir al Baño", "icon": "https://api.arasaac.org/api/pictograms/27553", "nextState": "conector_final_3ra", "category": "place" },
-        { "label": "Salir", "icon": "https://api.arasaac.org/api/pictograms/28678", "nextState": "conector_final_3ra", "category": "action" }
+        { "label": "Duerme", "icon": "https://api.arasaac.org/api/pictograms/28694", "nextState": "conector_final_3ra", "category": "action" },
+        { "label": "Juega", "icon": "https://api.arasaac.org/api/pictograms/28688", "nextState": "juguetes_3ra", "category": "action" },
+        { "label": "Come", "icon": "https://api.arasaac.org/api/pictograms/22536", "nextState": "alimentos_3ra", "category": "action" }
       ]
     },
     "opciones_solo_cosas_3ra": {
@@ -324,13 +320,7 @@
       "isFinal": true,
       "options": [
         { "label": "Galletas", "icon": "https://api.arasaac.org/api/pictograms/6100", "nextState": "conector_comida_3ra", "category": "food" },
-        { "label": "Agua", "icon": "https://api.arasaac.org/api/pictograms/24103", "nextState": "conector_comida_3ra", "category": "drink" },
-        { "label": "Jugo", "icon": "https://api.arasaac.org/api/pictograms/5482", "nextState": "conector_comida_3ra", "category": "drink" },
-        { "label": "Pelota", "icon": "https://api.arasaac.org/api/pictograms/2367", "nextState": "conector_final_3ra", "category": "toy" },
-        { "label": "Tablet", "icon": "https://api.arasaac.org/api/pictograms/25732", "nextState": "conector_final_3ra", "category": "toy" },
-        { "label": "Muñeca", "icon": "https://api.arasaac.org/api/pictograms/10668", "nextState": "conector_final_3ra", "category": "toy" },
-        { "label": "TV", "icon": "https://api.arasaac.org/api/pictograms/31792", "nextState": "conector_final_3ra", "category": "object" },
-        { "label": "Internet", "icon": "https://api.arasaac.org/api/pictograms/29627", "nextState": "conector_final_3ra", "category": "object" }
+        { "label": "Agua", "icon": "https://api.arasaac.org/api/pictograms/24103", "nextState": "conector_comida_3ra", "category": "drink" }
       ]
     },
     "opciones_compania_3ra": {
@@ -338,9 +328,7 @@
       "isFinal": true,
       "options": [
         { "label": "Mamá", "icon": "https://api.arasaac.org/api/pictograms/9854", "nextState": "conector_final_3ra", "category": "person" },
-        { "label": "Papá", "icon": "https://api.arasaac.org/api/pictograms/9855", "nextState": "conector_final_3ra", "category": "person" },
-        { "label": "Peluche", "icon": "https://api.arasaac.org/api/pictograms/2371", "nextState": "conector_final_3ra", "category": "toy" },
-        { "label": "El Perro", "icon": "https://api.arasaac.org/api/pictograms/2332", "nextState": "conector_final_3ra", "category": "animal" }
+        { "label": "Papá", "icon": "https://api.arasaac.org/api/pictograms/9855", "nextState": "conector_final_3ra", "category": "person" }
       ]
     },
     "opciones_con_ingredientes_3ra": {
@@ -348,13 +336,85 @@
       "isFinal": true,
       "options": [
         { "label": "Pollo", "icon": "https://api.arasaac.org/api/pictograms/3224", "nextState": "conector_comida_3ra", "category": "food" },
-        { "label": "Arroz", "icon": "https://api.arasaac.org/api/pictograms/3313", "nextState": "conector_comida_3ra", "category": "food" },
-        { "label": "Papas", "icon": "https://api.arasaac.org/api/pictograms/2345", "nextState": "conector_comida_3ra", "category": "food" },
-        { "label": "Pan", "icon": "https://api.arasaac.org/api/pictograms/2418", "nextState": "conector_comida_3ra", "category": "food" },
-        { "label": "Leche", "icon": "https://api.arasaac.org/api/pictograms/5586", "nextState": "conector_comida_3ra", "category": "food" },
-        { "label": "Mamá", "icon": "https://api.arasaac.org/api/pictograms/9854", "nextState": "conector_final_3ra", "category": "person" },
-        { "label": "Papá", "icon": "https://api.arasaac.org/api/pictograms/9855", "nextState": "conector_final_3ra", "category": "person" }
+        { "label": "Arroz", "icon": "https://api.arasaac.org/api/pictograms/3313", "nextState": "conector_comida_3ra", "category": "food" }
       ]
+    },
+
+    "intencion_accion_plural": {
+      "description": "¿QUÉ HACER? (PLURAL)",
+      "isFinal": false,
+      "options": [
+        { "label": "Comer", "icon": "https://api.arasaac.org/api/pictograms/22536", "nextState": "alimentos_plural", "category": "action" },
+        { "label": "Beber", "icon": "https://api.arasaac.org/api/pictograms/22533", "nextState": "bebidas_plural", "category": "action" },
+        { "label": "Jugar", "icon": "https://api.arasaac.org/api/pictograms/28688", "nextState": "juguetes_plural", "category": "action" },
+        { "label": "Dormir", "icon": "https://api.arasaac.org/api/pictograms/28694", "nextState": "conector_final_plural", "category": "action" }
+      ]
+    },
+    "estados_emocion_plural": {
+      "description": "EMOCIONES (PLURAL)",
+      "isFinal": true,
+      "options": [
+        { "label": "Felices", "icon": "https://api.arasaac.org/api/pictograms/6499", "nextState": "conector_final_plural", "category": "emotion" },
+        { "label": "Tristes", "icon": "https://api.arasaac.org/api/pictograms/13030", "nextState": "conector_final_plural", "category": "emotion" },
+        { "label": "Enojados", "icon": "https://api.arasaac.org/api/pictograms/5688", "nextState": "conector_final_plural", "category": "emotion" },
+        { "label": "Cansados", "icon": "https://api.arasaac.org/api/pictograms/5529", "nextState": "conector_final_plural", "category": "emotion" }
+      ]
+    },
+    "sensaciones_plural": { 
+      "description": "TENEMOS... (PLURAL)", 
+      "options": [ 
+        { "label": "Hambre", "nextState": "conector_final_plural", "icon": "https://api.arasaac.org/api/pictograms/6361" }, 
+        { "label": "Sed", "nextState": "conector_final_plural", "icon": "https://api.arasaac.org/api/pictograms/6363" } 
+      ] 
+    },
+    "lugares_plural": { 
+      "description": "VAMOS A... (PLURAL)", 
+      "options": [ 
+        { "label": "Parque", "nextState": "conector_final_plural", "icon": "https://api.arasaac.org/api/pictograms/36423" }, 
+        { "label": "Baño", "nextState": "conector_final_plural", "icon": "https://api.arasaac.org/api/pictograms/27553" } 
+      ] 
+    },
+    "alimentos_plural": {
+      "description": "COMIDAS (PLURAL)",
+      "isFinal": true,
+      "options": [
+        { "label": "Sopa", "icon": "https://api.arasaac.org/api/pictograms/3323", "nextState": "conector_comida_plural", "category": "food" },
+        { "label": "Galletas", "icon": "https://api.arasaac.org/api/pictograms/6100", "nextState": "conector_comida_plural", "category": "food" },
+        { "label": "Pan", "icon": "https://api.arasaac.org/api/pictograms/2418", "nextState": "conector_comida_plural", "category": "food" }
+      ]
+    },
+    "bebidas_plural": {
+      "description": "BEBIDAS (PLURAL)",
+      "isFinal": true,
+      "options": [
+        { "label": "Agua", "icon": "https://api.arasaac.org/api/pictograms/24103", "nextState": "conector_comida_plural", "category": "drink" },
+        { "label": "Leche", "icon": "https://api.arasaac.org/api/pictograms/5586", "nextState": "conector_comida_plural", "category": "drink" }
+      ]
+    },
+    "conector_final_plural": {
+      "description": "¿CÓMO SEGUIR? (PLURAL)",
+      "isFinal": true,
+      "options": [
+        { "label": "Y", "icon": "https://api.arasaac.org/api/pictograms/28168", "nextState": "opciones_acciones_mixtas_plural", "category": "connector" },
+        { "label": "Con", "icon": "https://api.arasaac.org/api/pictograms/28166", "nextState": "opciones_compania", "category": "connector" },
+        { "label": "Pero", "icon": "https://api.arasaac.org/api/pictograms/28169", "nextState": "opciones_pero_plural", "category": "connector" }
+      ]
+    },
+    "conector_comida_plural": {
+      "description": "¿CÓMO SEGUIR (COMIDA PLURAL)?",
+      "isFinal": true,
+      "options": [
+        { "label": "Y", "icon": "https://api.arasaac.org/api/pictograms/28168", "nextState": "opciones_acciones_mixtas_plural", "category": "connector" },
+        { "label": "Con", "icon": "https://api.arasaac.org/api/pictograms/28166", "nextState": "opciones_con_ingredientes_plural", "category": "connector" },
+        { "label": "Pero", "icon": "https://api.arasaac.org/api/pictograms/28169", "nextState": "opciones_pero_plural", "category": "connector" }
+      ]
+    },
+    "juguetes_plural": { 
+      "description": "JUGUETES (PLURAL)", 
+      "options": [ 
+        { "label": "Pelota", "nextState": "conector_final_plural", "icon": "https://api.arasaac.org/api/pictograms/2367" }, 
+        { "label": "Muñeca", "nextState": "conector_final_plural", "icon": "https://api.arasaac.org/api/pictograms/10668" } 
+      ] 
     },
     "opciones_acciones_mixtas_plural": {
       "description": "¿QUÉ MÁS (PLURAL)?",
@@ -364,10 +424,8 @@
         { "label": "Beber", "icon": "https://api.arasaac.org/api/pictograms/22533", "nextState": "bebidas_plural", "category": "action" },
         { "label": "Jugar", "icon": "https://api.arasaac.org/api/pictograms/28688", "nextState": "juguetes_plural", "category": "action" },
         { "label": "Dormir", "icon": "https://api.arasaac.org/api/pictograms/28694", "nextState": "conector_final_plural", "category": "action" },
-        { "label": "Otra Comida", "icon": "https://api.arasaac.org/api/pictograms/5678", "nextState": "alimentos_plural", "category": "food", "silent": true },
-        { "label": "Otro Juguete", "icon": "https://api.arasaac.org/api/pictograms/2367", "nextState": "juguetes_plural", "category": "toy", "silent": true },
-        { "label": "Ver TV", "icon": "https://api.arasaac.org/api/pictograms/31792", "nextState": "conector_final_plural", "category": "action" },
-        { "label": "Ir al Baño", "icon": "https://api.arasaac.org/api/pictograms/27553", "nextState": "conector_final_plural", "category": "place" }
+        { "label": "Estamos...", "icon": "https://api.arasaac.org/api/pictograms/22485", "nextState": "estados_emocion_plural", "category": "verb" },
+        { "label": "Tenemos...", "icon": "https://api.arasaac.org/api/pictograms/36940", "nextState": "sensaciones_plural", "category": "verb" }
       ]
     },
     "opciones_solo_cosas_plural": {
@@ -375,13 +433,7 @@
       "isFinal": true,
       "options": [
         { "label": "Galletas", "icon": "https://api.arasaac.org/api/pictograms/6100", "nextState": "conector_comida_plural", "category": "food" },
-        { "label": "Agua", "icon": "https://api.arasaac.org/api/pictograms/24103", "nextState": "conector_comida_plural", "category": "drink" },
-        { "label": "Jugo", "icon": "https://api.arasaac.org/api/pictograms/5482", "nextState": "conector_comida_plural", "category": "drink" },
-        { "label": "Pelota", "icon": "https://api.arasaac.org/api/pictograms/2367", "nextState": "conector_final_plural", "category": "toy" },
-        { "label": "Tablet", "icon": "https://api.arasaac.org/api/pictograms/25732", "nextState": "conector_final_plural", "category": "toy" },
-        { "label": "Muñeca", "icon": "https://api.arasaac.org/api/pictograms/10668", "nextState": "conector_final_plural", "category": "toy" },
-        { "label": "TV", "icon": "https://api.arasaac.org/api/pictograms/31792", "nextState": "conector_final_plural", "category": "object" },
-        { "label": "Internet", "icon": "https://api.arasaac.org/api/pictograms/29627", "nextState": "conector_final_plural", "category": "object" }
+        { "label": "Agua", "icon": "https://api.arasaac.org/api/pictograms/24103", "nextState": "conector_comida_plural", "category": "drink" }
       ]
     },
     "opciones_solo_acciones_plural": {
@@ -390,9 +442,7 @@
       "options": [
         { "label": "Dormir", "icon": "https://api.arasaac.org/api/pictograms/28694", "nextState": "conector_final_plural", "category": "action" },
         { "label": "Jugar", "icon": "https://api.arasaac.org/api/pictograms/28688", "nextState": "juguetes_plural", "category": "action" },
-        { "label": "Comer", "icon": "https://api.arasaac.org/api/pictograms/22536", "nextState": "alimentos_plural", "category": "action" },
-        { "label": "Ir al Baño", "icon": "https://api.arasaac.org/api/pictograms/27553", "nextState": "conector_final_plural", "category": "place" },
-        { "label": "Salir", "icon": "https://api.arasaac.org/api/pictograms/28678", "nextState": "conector_final_plural", "category": "action" }
+        { "label": "Comer", "icon": "https://api.arasaac.org/api/pictograms/22536", "nextState": "alimentos_plural", "category": "action" }
       ]
     },
     "opciones_con_ingredientes_plural": {
@@ -401,13 +451,20 @@
       "options": [
         { "label": "Pollo", "icon": "https://api.arasaac.org/api/pictograms/3224", "nextState": "conector_comida_plural", "category": "food" },
         { "label": "Arroz", "icon": "https://api.arasaac.org/api/pictograms/3313", "nextState": "conector_comida_plural", "category": "food" },
-        { "label": "Papas", "icon": "https://api.arasaac.org/api/pictograms/2345", "nextState": "conector_comida_plural", "category": "food" },
-        { "label": "Pan", "icon": "https://api.arasaac.org/api/pictograms/2418", "nextState": "conector_comida_plural", "category": "food" },
-        { "label": "Leche", "icon": "https://api.arasaac.org/api/pictograms/5586", "nextState": "conector_comida_plural", "category": "food" },
-        { "label": "Mamá", "icon": "https://api.arasaac.org/api/pictograms/9854", "nextState": "conector_final_plural", "category": "person" },
-        { "label": "Papá", "icon": "https://api.arasaac.org/api/pictograms/9855", "nextState": "conector_final_plural", "category": "person" }
+        { "label": "Papas", "icon": "https://api.arasaac.org/api/pictograms/2345", "nextState": "conector_comida_plural", "category": "food" }
       ]
     },
+    "opciones_pero_plural": {
+      "description": "¿QUÉ PASA? (PLURAL)",
+      "isFinal": true,
+      "options": [
+        { "label": "No queremos", "icon": "https://api.arasaac.org/api/pictograms/6157", "nextState": "opciones_acciones_mixtas_plural", "category": "negation" },
+        { "label": "No podemos", "icon": "https://api.arasaac.org/api/pictograms/6162", "nextState": "opciones_solo_acciones_plural", "category": "negation" },
+        { "label": "Estamos cansados", "icon": "https://api.arasaac.org/api/pictograms/5529", "nextState": "fin_total", "category": "emotion" },
+        { "label": "No hay", "icon": "https://api.arasaac.org/api/pictograms/6155", "nextState": "opciones_solo_cosas_plural", "category": "negation" }
+      ]
+    },
+
     "fin_total": {
       "description": "Fin de la frase",
       "isFinal": true,
@@ -439,7 +496,7 @@
     {
       "label": "ME DUELE",
       "icon": "https://api.arasaac.org/api/pictograms/6365",
-      "sentence": "Me duele",
+      "sentence": "Me duele...",
       "color": "#FFF3E0",
       "action": "open_pain_menu"
     }

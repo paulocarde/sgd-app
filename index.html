@@ -2,37 +2,60 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Voz - Comunicador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PictoGo</title>
+    
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#FF9800">
+    
+    <link rel="apple-touch-icon" href="icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="PictoGo">
+
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
     <header>
         <div class="phrase-container">
-            <div id="display-phrase" placeholder="Toca los botones..."></div>
-            <button id="btn-speak-now" class="action-btn" aria-label="Hablar ahora">🔊</button>
+            <div id="display-phrase">...</div>
+            
+            <button id="btn-speak-now" class="action-btn" aria-label="Hablar ahora">
+                🔊
+            </button>
         </div>
     </header>
 
     <main>
         <div id="favorites-container"></div>
+        
         <div id="options-container">
-            <p class="loading-msg">Cargando pictogramas...</p>
+            <p class="loading-msg">Cargando sistema...</p>
         </div>
+        
         <div style="height: 20px;"></div>
     </main>
 
     <footer>
-        <div id="quick-actions-container"></div>
+        <div id="quick-actions-container">
+            </div>
     </footer>
 
     <script src="js/automata.js"></script>
     <script src="js/tts.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/app.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(reg => console.log('Service Worker registrado:', reg))
+                    .catch(err => console.error('Error SW:', err));
+            });
+        }
+    </script>
 
 </body>
 </html>

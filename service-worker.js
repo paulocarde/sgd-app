@@ -1,36 +1,52 @@
-const CACHE_NAME = 'sgd-v5'; // IMPORTANTE: Cambia el número aquí
-const ASSETS = [
+const CACHE_NAME = 'pictogo-v1'; // Si haces cambios futuros, sube este número (v2, v3...)
+const ASSETS_TO_CACHE = [
   './',
   './index.html',
+  './manifest.json',
+  './icon.png',
   './css/styles.css',
-  './js/automata.js',
-  './js/tts.js',
-  './js/ui.js',
   './js/app.js',
-  './data/automata.json',
-  './manifest.json'
+  './js/automata.js',
+  './js/ui.js',
+  './js/tts.js',
+  './data/automata.json'
 ];
 
-self.addEventListener('install', e => {
-    self.skipWaiting();
-    e.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS)));
+// 1. INSTALACIÓN: Guardar archivos en la mochila
+self.addEventListener('install', (event) => {
+  self.skipWaiting(); // Forza la instalación inmediata
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      console.log('[Service Worker] Cacheando archivos de PictoGo...');
+      return cache.addAll(ASSETS_TO_CACHE);
+    })
+  );
 });
 
-self.addEventListener('activate', e => {
-    e.waitUntil(
-        caches.keys().then(keyList => {
-            return Promise.all(keyList.map(key => {
-                if (key !== CACHE_NAME) return caches.delete(key);
-            }));
-        })
-    );
-    return self.clients.claim();
+// 2. ACTIVACIÓN: Limpiar versiones viejas
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((keyList) => {
+      return Promise.all(keyList.map((key) => {
+        if (key !== CACHE_NAME) {
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
+  return self.clients.claim(); // Toma el control de la página inmediatamente
 });
 
-self.addEventListener('fetch', e => {
-    e.respondWith(
-        caches.match(e.request).then(response => {
-            return response || fetch(e.request);
-        })
-    );
+// 3. INTERCEPTOR: Servir desde la caché si no hay internet
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request).then((cachedResponse) => {
+      // Si está en caché, lo devolvemos (Modo Offline)
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+      // Si no, lo pedimos a internet
+      return fetch(event.request);
+    })
+  );
 });

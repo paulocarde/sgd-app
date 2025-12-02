@@ -1,0 +1,17 @@
+{
+  "name": "PictoGo - Comunicador",
+  "short_name": "PictoGo",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FFF8E1",
+  "theme_color": "#FF9800",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
